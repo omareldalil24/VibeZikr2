@@ -5,6 +5,9 @@ import Quran from './Quran';
 import Adhkar from './Adhkar';
 import Talaweeh from './Talaweeh';
 import LiveBroadcast from './LiveBroadcast'; // استيراد مكون البث المباشر
+import * as serviceWorkerRegistration from './serviceWorkerRegistration'; // تأكد من المسار الصحيح
+serviceWorkerRegistration.register(); // تسجيل الـ Service Worker
+
 
 const App = () => {
   const [showIntro, setShowIntro] = useState(true);
