@@ -4,6 +4,9 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration'; // تأكد من المسار الصحيح
+serviceWorkerRegistration.register(); // تسجيل الـ Service Worker
+
 
 // تسجيل الـ Service Worker
 if (process.env.NODE_ENV === 'production') {
