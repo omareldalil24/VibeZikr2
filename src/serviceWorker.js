@@ -1,54 +1,63 @@
-const CACHE_NAME = "vibezikr-cache-v1";
-const urlsToCache = [
-  "/", 
-  "/index.html", 
-  "/static/js/bundle.js", 
-  "/static/js/0.chunk.js", 
-  "/static/js/main.chunk.js", 
+const cacheName = 'vibe-zikr-cache-v1'; // اسم الكاش
+const filesToCache = [
+  "/",
+  "/index.html",
+  "/static/js/bundle.js",
+  "/static/js/main.chunk.js",
   "/static/css/main.chunk.css",
-  "/images/logo.png",
-  "/images/moshaf.svg",
-  "/images/Azkar.svg",
-  "/images/sound.svg",
-  "/images/live.svg",
   "/favicon.ico",
   "/manifest.json",
   "/logo192.png",
   "/logo512.png",
+  "/images/logo.png", // الشعار
+  "/images/moshaf.svg", // أيقونة القرآن
+  "/images/Azkar.svg", // أيقونة الأذكار
+  "/images/sound.svg", // أيقونة تلاوة القرآن
+  "/images/live.svg" // أيقونة البث المباشر
 ];
 
-
-// تثبيت الـ Service Worker وتخزين الموارد في الكاش
-self.addEventListener("install", (event) => {
+// تثبيت الـ Service Worker
+self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      console.log("Opened cache");
-      return cache.addAll(urlsToCache);
+    caches.open(cacheName).then((cache) => {
+      return Promise.all(
+        filesToCache.map((url) => {
+          return cache.add(url).catch((error) => {
+            console.error("فشل في تخزين الملف في الكاش:", url, error);
+          });
+        })
+      );
     })
   );
 });
 
-// استخدام الموارد المخزنة في الكاش عند عدم وجود اتصال بالإنترنت
-self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
-    })
-  );
-});
+// تفعيل الـ Service Worker بعد التثبيت
+self.addEventListener('activate', (event) => {
+  const cacheWhitelist = [cacheName];
 
-// تحديث الكاش عند تغيير التطبيق
-self.addEventListener("activate", (event) => {
-  const cacheWhitelist = [CACHE_NAME];
   event.waitUntil(
-    caches.keys().then((cacheNames) =>
-      Promise.all(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
         cacheNames.map((cacheName) => {
           if (!cacheWhitelist.includes(cacheName)) {
-            return caches.delete(cacheName);
+            return caches.delete(cacheName); // حذف الكاشات القديمة
           }
         })
-      )
-    )
+      );
+    })
+  );
+});
+
+// التعامل مع الطلبات أثناء التشغيل
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request).then((cachedResponse) => {
+      if (cachedResponse) {
+        return cachedResponse; // إذا كان الملف في الكاش، سيتم استخدامه
+      }
+      return fetch(event.request); // إذا لم يكن في الكاش، يتم جلبه من الشبكة
+    }).catch((error) => {
+      console.error("خطأ في معالجة الطلب:", error);
+    })
   );
 });
