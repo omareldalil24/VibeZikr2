@@ -2,10 +2,10 @@
 
 // Check if service workers are supported in the browser
 if ('serviceWorker' in navigator) {
-  // Register the service worker
+  // Function to register the service worker
   const registerServiceWorker = () => {
     navigator.serviceWorker
-      .register('/serviceWorker.js') // قم بتحديد المسار الصحيح لملف serviceWorker.js
+      .register('/serviceWorker.js') // المسار الصحيح لملف الـ serviceWorker
       .then((registration) => {
         console.log('Service Worker registered successfully:', registration);
       })
