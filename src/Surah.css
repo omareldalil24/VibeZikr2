@@ -1,0 +1,56 @@
+/* src/Surah.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* يجعل الصفحة بطول الشاشة */
+  background-color: #f0f4c3; /* لون الخلفية */
+}
+.surah-container {
+    padding: 20px;
+    background-color: #e1f5fe; /* لون خلفية مبهج */
+    border-radius: 10px;
+    margin-top: 15px;
+    text-align: right; /* محاذاة النص لليمين */
+  }
+  
+  .back-button {
+    background-color: #f44336; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px; 
+  }
+  
+  .back-button:hover {
+    background-color: #d32f2f; 
+  }
+  
+  h2 {
+    text-align: center; /* محاذاة العنوان في الوسط */
+  }
+  
+  .verses-container {
+    margin-top: 20px; /* مسافة بين العنوان ومحتوى الآيات */
+  }
+  
+  .verses-text {
+    font-size: 18px; /* حجم الخط */
+    line-height: 1.6; /* ارتفاع الخط */
+    direction: rtl; /* اتجاه الكتابة من اليمين لليسار */
+    text-align: justify; /* محاذاة النص */
+  }
+  .verse-number {
+    color: #e70c0c; /* اللون المختلف لترقيم الآيات */
+    font-weight: bold; /* جعل رقم الآية بارز */
+  }
+  .bismillah-text {
+    font-family: 'Amiri', serif; /* خط مناسب للنصوص العربية */
+    font-size: 1.5rem; /* حجم النص */
+    color: #000; /* لون النص */
+    text-align: center; /* توسيط النص */
+    margin-bottom: 20px; /* مسافة تحت النص */
+    line-height: 2; /* ارتفاع السطر */
+  }
+  

@@ -1,0 +1,113 @@
+/* تصميم أساسي */
+.talaweeh-container {
+    direction: rtl;
+    text-align: right;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #4CAF50;
+  }
+  
+  .back-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .back-button:hover {
+    background-color: #45a049;
+  }
+  
+  .reciter-selection {
+    margin-bottom: 20px;
+  }
+  
+  .reciter-selection label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .reciter-selection select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .surah-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .surah-list li {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .surah-list button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .surah-list button:hover {
+    background-color: #45a049;
+  }
+  
+  .audio-player {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  /* تحسينات للأجهزة المحمولة */
+  @media (max-width: 768px) {
+    .title {
+      font-size: 20px;
+    }
+  
+    .reciter-selection {
+      text-align: center;
+    }
+  
+    .reciter-selection label,
+    .reciter-selection select {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .surah-list li {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .surah-list span {
+      margin-bottom: 10px;
+    }
+  
+    .surah-list button {
+      width: 100%;
+    }
+  }
+  
+  

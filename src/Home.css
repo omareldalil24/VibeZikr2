@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+/* src/Home.css */
+.home-logo {
+  display: block;
+  margin: 0 auto; /* لتوسيط الشعار */
+  max-width: 230px; /* أقصى عرض للشعار */
+  margin-bottom: 20px; /* مسافة أسفل الشعار */
+}
+
+.home-container {
+  direction: rtl;
+  padding: 40px;
+  background-color: #fff9c4;
+  /* لون خلفية مبهج */
+  min-height: 100vh;
+  text-align: right;
+  /* محاذاة النص لليمين */
+}
+
+.home-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  direction: rtl; /* محاذاة النصوص والأيقونات من اليمين إلى الشمال */
+}
+
+.nav-item {
+  display: flex; /* استخدام Flexbox لتنسيق الأيقونة والنص */
+  align-items: center; /* محاذاة الأيقونة والنص عموديًا */
+  margin-bottom: 15px; /* إضافة مسافة بين العناصر */
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+}
+
+.nav-icon {
+  width: 30px; /* حجم الأيقونات */
+  height: 30px;
+  margin-left: 15px; /* تقليل المسافة بين الأيقونة والنص */
+}
+
+
+
+
+.home-title {
+  font-family: 'Cairo', sans-serif; /* اختر الخط الذي تريده */
+  text-align: center; /* لتوسيط النص */
+  color: #000; /* لون النص */
+  font-size: 2rem; /* حجم النص */
+  margin-top: 10px;
+}
+
+
+.home-nav {
+  display: flex;
+  /* إعادة ترتيب العناصر */
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-nav ul {
+  list-style-type: none;
+  /* إزالة النقاط */
+  padding: 0;
+}
+
+.home-nav li {
+  background: #009688;
+  /* لون جذاب للقائمة */
+  color: white;
+  border-radius: 25px;
+  /* زوايا دائرية جميلة */
+  padding: 15px 20px;
+  /* هوامش داخلية */
+  margin: 10px 0;
+  /* هوامش خارجية بين العناصر */
+  width: 200px;
+  /* عرض ثابت للقائمة */
+  text-align: center;
+  /* محاذاة النص في الوسط */
+  transition: background 0.3s;
+  /* تأثير انسيابي عند hover */
+}
+
+.home-nav li:hover {
+  background: #00796b;
+  /* اختلاف اللون عند hover */
+}
+
+.live-item {
+  display: flex;
+  /* باستخدام flexbox */
+  align-items: center;
+  /* محاذاة العناصر في منتصف الارتفاع */
+  justify-content: center;
+  /* محاذاة العناصر في المركز */
+}
+
+.live-item i {
+  margin-right: 8px;
+  /* إضافة مسافة بين النص والأيقونة */
+  color: #f44336;
+  /* لون مميز للأيقونة (يمكن تغييره حسب التصميم) */
+}
